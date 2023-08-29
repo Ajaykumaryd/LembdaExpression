@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
@@ -60,12 +61,12 @@ public class Main {
 
 
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
 
         List<Person> people = Person.generateDefaultList();
 //        printPersonOlderThan(people,20);
-//        printPersonInRange(people,10,30);
-//         printPeople(people,new CheckPersonEligibleForSelectiveSearch());
+        printPersonInRange(people,10,30);
+         printPeople(people,new CheckPersonEligibleForSelectiveSearch());
 
 
         printPeople(people, new CheckPerson() {
@@ -78,7 +79,7 @@ public class Main {
         });
 
 
-        printPeople(people, (p) -> p.gender == Person.Sex.MALE && p.getAge() >= 18 && p.getAge() <=25);
+        printPeople(people,p -> p.gender == Person.Sex.MALE && p.getAge() >= 18 && p.getAge() <=25);
 
 
 
